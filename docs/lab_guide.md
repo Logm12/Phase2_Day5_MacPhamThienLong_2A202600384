@@ -69,9 +69,12 @@ Benchmark tối thiểu:
 | Citation coverage | số claims có source / tổng claims chính |
 | Failure rate | số query fail / tổng query |
 
-## Exit ticket
+## 4. Exit Ticket
 
-Mỗi nhóm trả lời 2 câu:
+### Câu hỏi 1: Trường hợp nào nên sử dụng Multi-Agent? Vì sao?
+Nên sử dụng kiến trúc Multi-Agent đối với các tác vụ nghiên cứu khoa học chuyên sâu, phân tích dữ liệu phức tạp đòi hỏi tính toàn vẹn thông tin cao và yêu cầu trích dẫn bằng chứng nguồn thực tế xác thực (như phân tích tài chính, đối chiếu tài liệu y học, báo cáo nghiên cứu công nghệ mới).
+- **Lý do kỹ thuật:** Kết quả Benchmark thực nghiệm chỉ ra điểm chất lượng báo cáo tăng từ **1.9/10** (Single-Agent) lên đến **4.8/10** (Multi-Agent). Việc cô lập vai trò của tác nhân Writer độc lập giúp triệt tiêu hiện tượng trôi ngữ cảnh (context drift), tập trung tối đa vào việc làm sâu luận điểm định lượng dựa trên thông tin thô được Researcher và Analyst xử lý chuyên biệt trước đó.
 
-1. Case nào nên dùng multi-agent? Vì sao?
-2. Case nào không nên dùng multi-agent? Vì sao?
+### Câu hỏi 2: Trường hợp nào không nên sử dụng Multi-Agent? Vì sao?
+Không nên sử dụng kiến trúc Multi-agent cho các tác vụ đơn giản, yêu cầu phản hồi nhanh tức thì (real-time/low latency) hoặc có giới hạn ngân sách vận hành chặt chẽ (như chatbot hỏi đáp thông thường, tóm tắt bài viết ngắn, tìm kiếm thông tin nhanh).
+- **Lý do kỹ thuật:** Số liệu đo lường thực tế chứng minh hệ thống Multi-Agent có thời gian xử lý tăng lên tới **62.30 giây** (gấp **2.28 lần** so với **27.36 giây** của Baseline) và tổng chi phí API phát sinh tăng lên **$0.003819** (gấp **4.90 lần** so với **$0.000779** của Baseline). Do đó, đối với các bài toán có tính thời gian thực cao, Single-agent gọn nhẹ mang lại hiệu quả kinh tế và tốc độ phản hồi tối ưu hơn vượt trội.

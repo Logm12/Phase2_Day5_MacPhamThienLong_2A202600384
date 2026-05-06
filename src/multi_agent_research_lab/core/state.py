@@ -3,11 +3,13 @@
 Students should extend this file when adding new agents, outputs, or evaluation metrics.
 """
 
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
 from multi_agent_research_lab.core.schemas import AgentResult, ResearchQuery, SourceDocument
+
+AgentRoute = Literal["RESEARCHER", "ANALYST", "WRITER", "END"]
 
 
 class ResearchState(BaseModel):
@@ -16,6 +18,8 @@ class ResearchState(BaseModel):
     request: ResearchQuery
     iteration: int = 0
     route_history: list[str] = Field(default_factory=list)
+    next_step: AgentRoute | None = None
+    cost_tracker: float = 0.0
 
     sources: list[SourceDocument] = Field(default_factory=list)
     research_notes: str | None = None

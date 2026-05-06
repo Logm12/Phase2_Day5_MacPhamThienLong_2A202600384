@@ -23,3 +23,10 @@ run-multi:
 
 clean:
 	rm -rf .pytest_cache .ruff_cache .mypy_cache dist build *.egg-info
+
+cleanup:
+	find . -type d -name "__pycache__" -exec rm -rf {} +
+	find . -type f -name "*.py[co]" -exec rm -f {} +
+	find . -type f -name ".DS_Store" -exec rm -f {} +
+	rm -rf .pytest_cache .mypy_cache
+	rm -rf reports/dumped_* temp_*
