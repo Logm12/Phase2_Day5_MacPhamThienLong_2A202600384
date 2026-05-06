@@ -1,18 +1,5 @@
 # Lab 20: Multi-Agent Research System Starter
 
-Starter repo cho bài lab **Multi-Agent Systems**: xây dựng hệ thống nghiên cứu gồm **Supervisor + Researcher + Analyst + Writer** và benchmark với single-agent baseline.
-
-> Mục tiêu của repo này là cung cấp **production-grade skeleton** để học viên phát triển và hoàn thiện mã nguồn cá nhân chất lượng cao.
-
-## Learning outcomes
-
-Sau 2 giờ lab, học viên cần có thể:
-
-1. Thiết kế role rõ ràng cho nhiều agent.
-2. Xây dựng shared state đủ thông tin cho handoff.
-3. Thêm guardrail tối thiểu: max iterations, timeout, retry/fallback, validation.
-4. Trace được luồng chạy và giải thích agent nào làm gì.
-5. Benchmark single-agent vs multi-agent theo quality, latency, cost.
 
 ## Architecture mục tiêu
 
